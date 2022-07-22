@@ -1,0 +1,13 @@
+.navbarP {
+    display: flex;
+    justify-content: space-between;
+
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+
+                li {
+                    margin: 0px 10px;
+                }
+        }
+}
