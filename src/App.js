@@ -1,9 +1,8 @@
 
 import './App.css';
 import BarMenu from './components/NavBar';
-
-//import CartWidget from './CartWidget/CartWidget';
 import ItemListContainer from './ItemListContainer/ItemListContainer';
+
 function App() {
   return ( 
     <>
@@ -11,7 +10,7 @@ function App() {
       <BarMenu/>
     </div>
     <div>
-      <ItemListContainer/>
+      <ItemListContainer section="Productos en oferta"/>
     </div>
     </>
   );

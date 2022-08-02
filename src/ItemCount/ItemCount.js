@@ -1,48 +1,28 @@
-import { useState, useEffect } from 'react'
-import './ItemCount.scss'
-import CreditCardIcon from '@mui/icons-material/CreditCard';
-import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { useState } from 'react'
 
-const ItemCount = ({data, action}) => {
-    const [contador, setContador] = useState(1)
-
-    const {nombre, foto, precio, stock} = data
-
+const ItemCount = ({stock}) => {
+    const [contador, setContador]= useState(1)
+    //const {nombre, imagen, precio, stock}=data
     const addNumber = () => {
-        setContador(contador + 1)
-    }
-    const removeNumber = () => {
-        setContador(contador - 1)
-    }
+        if (stock>contador){
+       setContador(contador + 1) 
+       }
     
-    useEffect( () => {
-        console.log("Actualizacion")
-        
-    }, [contador])
+    }
 
-
-
+    const deleteNumber = () => {
+        if (contador>1){
+        setContador (contador - 1)
+    }
+    }
+    //console.log(data.stock);
     return(
-        <div className="item-product">
-            <div className='float-options'>
-                <p>ENVIO GRATIS</p>
-                <button><FavoriteBorderIcon /></button>
+    <div className='countProd'>
+        
+                <button onClick={deleteNumber}>-</button>
+                <p>{contador}</p>
+                <button onClick={addNumber}>+</button>
             </div>
-            <img src={`/assets/${foto}`} alt="Imagen producto" />
-            <div className='detail-product'>
-                <p>{nombre}</p>
-                <p><CreditCardIcon /> 6 Cuotas sin interes</p>
-                <p><DeliveryDiningIcon />Envio fratis a partir de $6000</p>
-                <span>$ {precio}</span>
-               {/* <div className='countProd'>
-                    <button onClick={removeNumber}>-</button>
-                    <p>{contador}</p>
-                    <button onClick={addNumber}>+</button>
-                </div> */}
-            </div>
-        </div> 
-    )
+)
 }
-
 export default ItemCount
