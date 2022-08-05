@@ -3,10 +3,10 @@ import './ItemProduct.scss'
 import ItemCount from "../ItemCount/ItemCount"
 
 const ItemProduct =({data}) =>{
-    const {nombre, imagen, precio, stock}=data
+    const {nombre, foto, precio, stock}=data
     return(
         <div className="item-product">
-            <img src={`${imagen}`} alt="Imagen producto"/>
+            <img src={`${foto}`} alt="Imagen producto"/>
             <p>{nombre}</p>
             <span>$ {precio}</span>
             <p>stock: {stock}</p>

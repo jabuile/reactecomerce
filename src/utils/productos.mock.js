@@ -4,12 +4,12 @@ class Item {
         this.foto = foto;
         this.nombre = nombre;
         this.precio = precio;
-        this.stock = stock;
+        this.stock = stock
     }
 
 }
 
-const item1 = new Item ("1", "https://indufer.com.ar/wp-content/uploads/2018/07/martillo-galponero-stanley-mango-de-fibra-profesional-51071-D_NQ_NP_960100-MLA27180556418_042018-F-1.jpg", "martillo", 1500, 5);
+const item1 = new Item ("1", "https://http2.mlstatic.com/D_NQ_NP_823068-MLA45334241103_032021-O.webp", "martillo", 1500, 5);
 const item2 = new Item ("2", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3M-aHlhKsLAhyAYkHWJRk523zNU5aa2Au-hQ25gyv4IST3a0OjrLqb6Hbs1LW0iZ_f8s&usqp=CAU","amoladora",8900, 6);
 const item3 = new Item ("3","https://adamimages.sbdinc.com/GEM/Dewalt/1000x1000_72r/DW508S_1.jpg","taladro", 7500, 3);
 const item4 = new Item ("4","https://pintureriasagitario.com.ar/wp-content/uploads/2020/08/Lijadora.jpg","lijadora", 6500, 4);
