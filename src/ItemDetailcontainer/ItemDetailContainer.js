@@ -1,29 +1,31 @@
 import arrProductos from "../utils/productos.mock";
 import ItemDetail from "../ItemDetail/ItemDetail";
-//import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from 'react-router-dom'
 
-const ItemDtailContainer =({}) => {
+const ItemDetailContainer = () => {
+    const [productData, setProductData] = useState({})
 
-const Itemid = productos.filter((productos)=> productos.id === Number(id))
-
-const getItem =() => new Promise ((resolve, reject) =>{
-    setTimeout (()=>{
+    const { id } = useParams()
     
-        resolve (Itemid [0])
-    
-    }, 2000)
-    })
+    useEffect( () => {
+        filterById()
+    }, [id])
 
-    useEffect (() => {
-
-    },[])
-
+    const filterById = () => {
+        arrProductos.some( (product) => {
+            if(product.id == id) {
+                console.log("producto filtrado: ", product)
+                setProductData(product) 
+            }
+        }
+    )
+    }
+    return(
+        <div className="container-item-detail">
+            <ItemDetail data={productData}/>
+        </div>
+    )
 }
 
-return (
-    <div className="ItemDetail-container">
-        <ItemDetail productos={}/>
-    </div>
-)
-
-export default ItemDtailContainer
+export default ItemDetailContainer

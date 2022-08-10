@@ -1,10 +1,10 @@
-import ItemProduct from "../ItemProduct/ItemProduct";
+import Item from "../Item/Item";
 
 const ItemList = ({dataProductos})=> {
     return (
         <>
         {dataProductos.map ((productos) => {
-            return <ItemProduct key={productos.id} data={productos}/>
+            return <Item key={productos.id} data={productos}/>
             
         })}
         </>

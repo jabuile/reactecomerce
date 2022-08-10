@@ -1,21 +1,34 @@
 import ItemCount from "../ItemCount/ItemCount";
- 
-const ItemDetail =({productos}) => {
+import { useState } from "react";
+import { Link } from 'react-router-dom'
 
-    const {nombre, precio, imagen, stock}=productos
-    
-    return (
+ 
+const ItemDetail = ({data}) => {
+    const [quantitySelected, setQuantitySelected] = useState(0)
+
+    return(
         <>
-        <div className="item-product">
-            <img src={`${imagen}`} alt="Imagen producto"/>
-            <p>{nombre}</p>
-            <span>$ {precio}</span>
-            <p>stock: {stock}</p>
-            <ItemCount stock={stock}/>
-            <button>Comprar</button>
-        </div>
+            <div className="item-detail-image">
+                <img src={`/assets/${data.foto}`} alt="imagen" />
+            </div>
+            <div className="item-detail-info">
+                
+                <h2>{data.nombre}</h2>
+                <p className="detail-info__price">$ {data.precio}</p>
+                <p className="detail-info__stock">$ {data.stock}</p>
+                <ItemCount/>
+             
+                
+                
+                {console.log("quantitySelected: ", quantitySelected)}
+    {/* {
+        quantitySelected > 0 ? <button><Link to="/cart">TERMINAR COMPRA</Link></button> : <ItemCount setQuantitySelected={setQuantitySelected} productData={data}/>
+    } */}
+                
+                
+            </div>
         </>
     )
-} 
+}
 
 export default ItemDetail
